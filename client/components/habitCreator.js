@@ -66,9 +66,7 @@ class HabitCreator extends React.Component {
   }
 }
 
-/**
- * CONTAINER
- */
+
 const mapState = (state) => {
   return {
     email: state.user.email
@@ -85,9 +83,6 @@ const mapDispatch = (dispatch) => {
 
 export default connect(mapState, mapDispatch)(HabitCreator)
 
-/**
- * PROP TYPES
- */
 // UserHome.propTypes = {
 //   email: PropTypes.string
 // }

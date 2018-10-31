@@ -28,9 +28,6 @@ class Habits extends React.Component {
   }
 }
 
-/**
- * CONTAINER
- */
 const mapState = (state) => {
   return {
     email: state.user.email
@@ -39,9 +36,6 @@ const mapState = (state) => {
 
 export default connect(mapState)(Habits)
 
-/**
- * PROP TYPES
- */
 // UserHome.propTypes = {
 //   email: PropTypes.string
 // }
