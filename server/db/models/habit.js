@@ -10,14 +10,20 @@ const Habit = db.define('habit', {
     type: Sequelize.STRING,
     allowNull: false
   },
-  weeklyNum: {
-    type: Sequelize.INTEGER,
+  goal: {
+    type: Sequelize.BOOLEAN,
     allowNull: false
   },
-  days: {
+  goalDays: {
+    type: Sequelize.INTEGER,
+    allowNull: true
+  },
+  currentDays: {
     type: Sequelize.ARRAY(Sequelize.STRING),
     defaultValue: null
   }
 })
 
 module.exports = Habit
+
+// add checker for if 'goal' is true, 'goalDays' must not be null

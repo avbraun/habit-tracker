@@ -6,9 +6,10 @@ router.post('/new', (req, res, next) => {
   Habit.create({
     name: req.body.name,
     description: req.body.description,
-    weeklyNum: req.body.weeklyNum,
-    days: req.body.days
+    goal: req.body.goal,
+    goalDays: req.body.goalDays,
+    currentDays: req.body.days
   })
-    .then(users => res.json(users))
+    .then(habit => res.json(habit))
     .catch(next)
 })
