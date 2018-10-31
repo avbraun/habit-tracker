@@ -3,9 +3,6 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {HabitCreator} from '../components'
 
-/**
- * COMPONENT
- */
 class Habits extends React.Component {
   constructor() {
     super()

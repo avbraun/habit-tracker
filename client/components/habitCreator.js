@@ -3,9 +3,6 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {postHabit} from '../store'
 
-/**
- * COMPONENT
- */
 class HabitCreator extends React.Component {
   constructor() {
     super()
@@ -27,6 +24,12 @@ class HabitCreator extends React.Component {
   handleSubmit(event) {
     event.preventDefault()
     this.props.createHabit(this.state)
+    this.setState({
+      name: '',
+      description: '',
+      weeklyNum: null,
+      days: null
+    })
   }
 
   render() {
@@ -38,13 +41,13 @@ class HabitCreator extends React.Component {
         <h3>Habit Creator</h3>
         <form
           onSubmit={this.handleSubmit}
+          onChange={this.handleUpdate}
         >
           <label>Habit name:</label>
           <input
             name="name"
-            onChange={this.handleUpdate}
           />
-          <label>Description:</label>
+          <label>Description (optional):</label>
           <input
             name="description"
           />
@@ -80,7 +83,7 @@ const mapDispatch = (dispatch) => {
   }
 }
 
-export default connect(mapState)(HabitCreator)
+export default connect(mapState, mapDispatch)(HabitCreator)
 
 /**
  * PROP TYPES

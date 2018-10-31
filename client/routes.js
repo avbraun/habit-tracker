@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {withRouter, Route, Switch} from 'react-router-dom'
 import PropTypes from 'prop-types'
-import {Login, Signup, UserHome, Habits, HabitCreator} from './components'
+import {Login, Signup, UserHome, Habits, MyHabits} from './components'
 import {me} from './store'
 
 /**
@@ -15,6 +15,7 @@ class Routes extends Component {
 
   render () {
     const {isLoggedIn} = this.props
+    const test = { habits: ['123', '456', '789'] }
 
     return (
       <Switch>
@@ -27,6 +28,7 @@ class Routes extends Component {
               {/* Routes placed here are only available after logging in */}
               <Route path="/home" component={UserHome} />
               <Route path="/habits" component={Habits} />
+              <Route path="/myhabits" render={(props) => (<MyHabits {...test} />)} />
             </Switch>
         }
         {/* Displays our Login component as a fallback */}

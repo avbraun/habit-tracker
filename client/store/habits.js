@@ -32,7 +32,7 @@ export const postHabit = habit =>
 export default function (state = habits, action) {
   switch (action.type) {
     case CREATE_HABIT:
-      return [...state, action.user]
+      return [...state, action.habit]
     default:
       return state
   }
